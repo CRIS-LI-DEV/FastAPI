@@ -1,6 +1,13 @@
 from fastapi import FastAPI
-
+from fastapi.middleware.cors import CORSMiddleware
+import requests
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permitir solicitudes desde cualquier origen (cambiar según tus necesidades)
+    allow_methods=["GET"],  # Permitir solo el método GET (cambiar según tus necesidades)
+    allow_headers=["*"],  # Permitir cualquier header (cambiar según tus necesidades)
+)
 
 @app.get("/")
 async def root():
