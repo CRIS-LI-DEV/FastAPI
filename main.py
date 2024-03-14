@@ -9,7 +9,7 @@ async def root():
 
     
 @app.get("/usuarios")
-async def root():
+async def rxxx():
     data_list = [
     {"nombre": f"juan_{i+1}", "edad": 12 + i, "pais": "chile"} 
     for i in range(50)
